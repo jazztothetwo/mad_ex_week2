@@ -45,7 +45,12 @@
  */
 
 function accountGenerator(accountName, initBalance) {
-  // Your implementation here
+  let balance = initBalance;
+  
+  return function(amount) {
+    balance += amount
+    return `You deposited ${amount} to your ${accountName} Account and the current balance is ${balance}.`
+  }
 }
 
 /**
