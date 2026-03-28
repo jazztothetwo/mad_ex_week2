@@ -140,7 +140,11 @@ function greetingGenerator(defaultGreeting = "Hello") {
  */
 
 function mergeAndExtract(array1, array2) {
-  // Your implementation here
+  const merged = [...array1, ...array2];
+
+  const [first, second, ...remaining] = merged;
+
+  return { first, second, remaining };
 }
 
 /**
@@ -170,7 +174,16 @@ function mergeAndExtract(array1, array2) {
  */
 
 function calculateAlternatingHarmonic(n, accumulator = 0, index = 1) {
-  // Your implementation here
+  if (index > n) {
+    return accumulator;
+  }
+  const term = (index % 2 === 0 ? -1 : 1) * (1 / index);
+
+  return calculateAlternatingHarmonic(
+    n,
+    accumulator + term,
+    index + 1
+  );
 }
 
 // Export the function for testing
