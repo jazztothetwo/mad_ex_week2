@@ -114,7 +114,10 @@ function distributeTips(...args) {
  */
 
 function greetingGenerator(defaultGreeting = "Hello") {
-  // Your implementation here
+  return function(name, greeting) {
+    const finalGreeting = greeting || defaultGreeting;
+    return `${finalGreeting}, ${name}!`;
+  };
 }
 
 /**
