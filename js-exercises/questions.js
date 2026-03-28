@@ -73,7 +73,17 @@ function accountGenerator(accountName, initBalance) {
  */
 
 function distributeTips(...args) {
-  // Your implementation here
+  let food = 0
+  let drink = 0
+
+  for (i = 0; i < args.length; i++) {
+    if (i % 2 === 0) {
+      food += args[i]
+    } else {
+      drink += args[i]
+    }
+  }
+  return { food, drink }
 }
 
 /**
